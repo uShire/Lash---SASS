@@ -1,0 +1,208 @@
+.header {
+  background: $clr-light;
+  position: relative;
+  padding: 1.5rem 1rem;
+  img {
+    width: 8rem;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    a#apply {
+      margin-right: 2rem;
+    }
+    &__content {
+      position: absolute;
+      background: $clr-pink;
+      top: -100rem;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      padding: 10rem 0;
+      transition: 0.5s ease;
+      ul {
+        padding: 2rem 0;
+        overflow: hidden;
+        li {
+          max-width: 25rem;
+          margin: 0 auto;
+          padding: 2rem;
+          transition: 0.5s ease;
+          a {
+            color: $clr-light;
+            font-size: 1.8rem;
+            font-weight: 600;
+          }
+          &:hover {
+            transform: scale(1.1);
+            background: $clr-light;
+            transition: 0.5s ease;
+            a {
+              color: $clr-pink;
+            }
+          }
+        }
+      }
+      &__social {
+        display: flex;
+        justify-content: center;
+        a {
+          transition: 0.5s ease;
+          padding: 2rem;
+          i {
+            color: $clr-light;
+            font-size: 3rem;
+          }
+          &:first-child {
+            &:hover {
+              transform: scale(1.2);
+              transition: 0.5s ease;
+              background: #3b5998;
+            }
+          }
+          &:nth-child(2) {
+            &:hover {
+              transform: scale(1.2);
+              transition: 0.5s ease;
+              background: $clr-light;
+              i {
+                color: $clr-pink;
+              }
+            }
+          }
+          &:last-child {
+            &:hover {
+              transform: scale(1.2);
+              transition: 0.5s ease;
+              background: #26a7de;
+            }
+          }
+        }
+      }
+      &.open {
+        top: 0;
+        transition: 1.5s ease;
+      }
+    }
+  }
+  .toggle__menu {
+    padding: 1rem;
+    transition: 0.5s ease;
+    span {
+      display: block;
+      width: 3rem;
+      height: 0.3rem;
+      background-color: $clr-pink;
+      border-radius: 5rem;
+      &:nth-child(2) {
+        margin: 0.5rem 0;
+      }
+    }
+    &#open {
+      &.open {
+        span {
+          &:first-child {
+            transform: translate(0, 10px) rotate(225deg);
+            transition: 0.5s ease;
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:last-child {
+            transform: translate(0, -6px) rotate(-225deg);
+            transition: 0.5s ease;
+          }
+        }
+      }
+      &:hover {
+        background: $clr-light;
+        border-radius: 5rem;
+        transition: 0.5s ease;
+        span {
+          background-color: $clr-pink;
+          transition: 0.5s ease;
+        }
+      }
+    }
+    &#close {
+      width: fit-content;
+      margin: 0 auto;
+      margin-top: 3rem;
+      border-radius: 5rem;
+      span {
+        background-color: $clr-light;
+        transition: 0.5s ease;
+        &:first-child {
+          transform: translate(0, 10px) rotate(45deg);
+          transition: 0.5s ease;
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:last-child {
+          transform: translate(0, -6px) rotate(-45deg);
+          transition: 0.5s ease;
+        }
+      }
+      &:hover {
+        background: $clr-light;
+        border-radius: 5rem;
+        transition: 0.5s ease;
+        span {
+          background-color: $clr-pink;
+          transition: 0.5s ease;
+        }
+      }
+    }
+  }
+  @include mediaQuery($break-xl) {
+    .toggle__menu {
+      display: none;
+    }
+    a#apply {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    &__nav {
+      &__content {
+        position: static;
+        background: unset;
+        width: unset;
+        height: unset;
+        padding: 0;
+        img {
+          display: none;
+        }
+        ul {
+          display: flex;
+          padding: 0;
+          li {
+            max-width: unset;
+            padding: 0 2rem;
+            a {
+              font-size: 1.5rem;
+              color: $clr-dark;
+            }
+            &:hover {
+              transform: unset;
+              background: unset;
+              transition: 0.5s ease;
+              a {
+                color: $clr-pink;
+              }
+            }
+          }
+        }
+        &__social {
+          display: none;
+        }
+      }
+    }
+  }
+}

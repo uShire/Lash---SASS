@@ -1,0 +1,31 @@
+@mixin btn($bg) {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: $bg;
+  color: $clr-light;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  &:hover {
+    background: darken($bg, 10);
+  }
+}
+
+@mixin mediaQuery($width: 32rem) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin imgFit($width: 200px, $height: 200px) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+  object-fit: center center;
+  display: block;
+}
+
+@mixin grid($cols: 1, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  grid-gap: $gap;
+}
